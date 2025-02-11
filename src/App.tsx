@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { MobileMenu } from '@/components/MobileMenu/MobileMenu.tsx';
+import { PrimaryMenu } from '@/components/PrimaryMenu';
+import { MenuItemProps } from '@/components/MenuItem';
+import { SecondaryMenu } from '@/components/SecondaryMenu';
+import { Dropdown } from '@/components/Dropdown';
+import { Logo } from '@/components/Logo';
+
+import menuData from '@/data/menu-data.json';
+import { useData } from '@/context/useData.tsx';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const menuItems = menuData as MenuItemProps[];
+  const { userName } = useData();
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className='flex h-screen flex-col bg-white'>
+      <header className='px-4 shadow-md lg:p-0'>
+        <div className='relative container mx-auto flex items-center justify-between lg:justify-start lg:px-4'>
+          <Logo />
+
+          <PrimaryMenu menuItems={menuItems} />
+
+          <Dropdown className='ml-auto hidden lg:flex' label={userName}>
+            <SecondaryMenu />
+          </Dropdown>
+
+          <MobileMenu menuItems={menuItems} />
+        </div>
+      </header>
+
+      <div className='flex grow items-center justify-center'>Hello Ahold!</div>
+    </div>
+  );
 }
 
-export default App
+export default App;

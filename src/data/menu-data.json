@@ -1,0 +1,37 @@
+[
+    {
+      "label": "Home",
+      "href": "/",
+      "icon": "house"
+    },
+    {
+      "label": "Signalen",
+      "href": "/signalen",
+      "icon": "trending-up"
+    },
+    {
+      "label": "Trend View",
+      "href": "/trend-view",
+      "icon": "trending-up"
+    },
+    {
+      "label": "Deep Dives",
+      "href": "/deep-dives",
+      "icon": "trending-up"
+    },
+    {
+      "label": "KPI Library",
+      "href": "/kpi-library",
+      "icon": "trending-up"
+    },
+    {
+      "label": "Dashboards",
+      "href": "/dashboards",
+      "icon": "trending-up"
+    },
+    {
+      "label": "FAQ",
+      "href": "/faq",
+      "icon": "circle-help"
+    }
+  ]
