@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { X } from 'lucide-react';
 import { MenuItem, type MenuItemProps } from '@/components/MenuItem';
 import { SecondaryMenu } from '@/components/SecondaryMenu';
-import { useData } from '@/context/useData.tsx';
+import { useData } from '@/context/useData';
 
 type MobileMenuProps = {
   isOpen: boolean;
@@ -27,8 +27,8 @@ export function Flyout({ isOpen, menuItems, onClose }: MobileMenuProps) {
 
         <div className='flex items-center'>
           <div className='mr-4 h-6 w-px bg-gray-200' />
-          <button className='hover:cursor-pointer'>
-            <X onClick={onClose} size='28' />
+          <button className='hover:cursor-pointer' onClick={onClose} aria-label='Close menu'>
+            <X size='28' />
           </button>
         </div>
       </div>

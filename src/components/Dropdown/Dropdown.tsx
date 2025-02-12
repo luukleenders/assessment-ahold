@@ -29,21 +29,17 @@ export function Dropdown({ children, className, label }: PropsWithChildren<Dropd
   );
 
   return (
-    <div className={containerClass}>
+    <div className={containerClass} data-testid='dropdown-container'>
       <button
         onClick={clickHandler}
         className='flex items-center gap-2 font-bold hover:cursor-pointer'
         aria-expanded={isOpen}
-        aria-haspopup="true"
+        aria-haspopup='true'
       >
-        {label} <ChevronDown className={iconClass} aria-hidden="true" />
+        {label} <ChevronDown className={iconClass} aria-hidden='true' />
       </button>
 
-      <div 
-        className={dropdownClass}
-        role="menu"
-        aria-orientation="vertical"
-      >
+      <div className={dropdownClass} role='menu' aria-orientation='vertical'>
         {children}
       </div>
     </div>

@@ -1,12 +1,12 @@
-import { MobileMenu } from '@/components/MobileMenu/MobileMenu.tsx';
+import { MobileMenu } from '@/components/MobileMenu';
 import { PrimaryMenu } from '@/components/PrimaryMenu';
 import { MenuItemProps } from '@/components/MenuItem';
 import { SecondaryMenu } from '@/components/SecondaryMenu';
 import { Dropdown } from '@/components/Dropdown';
 import { Logo } from '@/components/Logo';
 
-import menuData from '@/data/menu-data.json';
 import { useData } from '@/context/useData.tsx';
+import menuData from '@/data/menu-data.json';
 
 function App() {
   const menuItems = menuData as MenuItemProps[];
@@ -14,8 +14,8 @@ function App() {
 
   return (
     <div className='flex h-screen flex-col bg-white'>
-      <header className='px-4 shadow-md lg:p-0'>
-        <div className='relative container mx-auto flex items-center justify-between lg:justify-start lg:px-4'>
+      <header className='px-4 shadow-md'>
+        <div className='relative container mx-auto flex items-center justify-between lg:justify-start'>
           <Logo />
 
           <PrimaryMenu menuItems={menuItems} />

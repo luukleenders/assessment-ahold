@@ -28,14 +28,14 @@ export function MobileMenu({ menuItems }: MobileMenuProps) {
 
   return (
     <>
-      <button 
-        onClick={clickHandler} 
-        className='flex items-center hover:cursor-pointer md:hidden'
+      <button
+        onClick={clickHandler}
+        className='flex items-center hover:cursor-pointer lg:hidden'
         aria-expanded={isOpen}
-        aria-label="Main menu"
+        aria-label='Main menu'
       >
         <div className='mr-4 h-6 w-px bg-gray-200' />
-        <Menu size='24' aria-hidden="true" />
+        <Menu size='24' aria-hidden='true' />
       </button>
 
       <Flyout isOpen={isOpen} menuItems={menuItems} onClose={clickHandler} />
